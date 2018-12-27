@@ -1,9 +1,7 @@
-/* eslint-disable arrow-body-style */
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-// eslint-disable-next-line no-undef
-export default Card = (props) => {
+const Card = (props) => {
     return (
         <View style={styles.containerStyle}>
             {props.children}
@@ -27,3 +25,6 @@ const styles = {
         marginTop: 10 
     }
 };
+
+export { Card }; 
+
