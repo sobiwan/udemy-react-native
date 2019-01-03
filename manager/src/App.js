@@ -3,8 +3,12 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
+import initFirebase from './firebase/initFirebase';
 
 class App extends Component { 
+  componentWillMount(){
+    initFirebase();
+  }
 
   render () {
       return (
