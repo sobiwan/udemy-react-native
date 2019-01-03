@@ -3,4 +3,5 @@ import 'firebase/auth';
 import 'firebase/database';
 import { config } from './config';
 
-export default () => firebase.initializeApp(config);
+export default () =>
+  firebase.initializeApp(config);
