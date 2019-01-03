@@ -14,6 +14,7 @@ class LibraryList extends Component {
         data={this.props.libraries}
         renderItem={this.renderItem}
         keyExtractor={library => `${library.id}`}
+        
       />
     );
   }
