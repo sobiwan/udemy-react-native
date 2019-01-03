@@ -56,4 +56,4 @@ buck-out/
 *.jsbundle
 
 # firebase
-src/firebase/config.js
+src/firebase/config
