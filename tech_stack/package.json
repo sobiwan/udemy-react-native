@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --single-quote all --write --print-width 40 '**/*.js'",
+    "format-functions": "prettier --single-quote all --write --print-width 40 'functions/**/*.js'",
   },
   "dependencies": {
     "pretty-quick": "^1.8.0",
@@ -24,10 +26,11 @@
   },
   "jest": {
     "preset": "react-native"
+  }, 
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote all --write --print-width 40",
+      "git add"
+    ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  }
 }
