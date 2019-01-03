@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "format": "prettier --single-quote all --write --print-width 40 '**/*.js'",
-    "format-functions": "prettier --single-quote all --write --print-width 40 'functions/**/*.js'",
+    "format-functions": "prettier --single-quote all --write --print-width 40 'functions/**/*.js'"
   },
   "dependencies": {
     "pretty-quick": "^1.8.0",
@@ -32,5 +32,5 @@
       "prettier --single-quote all --write --print-width 40",
       "git add"
     ]
-  },
+  }
 }
