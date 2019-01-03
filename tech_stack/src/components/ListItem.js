@@ -1,13 +1,15 @@
-import React, { Component } from "react";
-import { CardSection } from "./common";
+import React, {
+  Component
+} from 'react';
+import { CardSection } from './common';
 import {
   Text,
   TouchableWithoutFeedback,
   View,
   LayoutAnimation
-} from "react-native";
-import { connect } from "react-redux";
-import * as actions from "../actions";
+} from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class ListItem extends Component {
   componentWillUpdate() {
@@ -15,13 +17,17 @@ class ListItem extends Component {
   }
 
   renderDescription() {
-    const { description } = this.props.library.item;
+    const {
+      description
+    } = this.props.library.item;
     const { expanded } = this.props;
 
     if (expanded) {
       return (
         <CardSection>
-          <Text style={{ flex: 1 }}>{description}</Text>
+          <Text style={{ flex: 1 }}>
+            {description}
+          </Text>
         </CardSection>
       );
     }
@@ -29,13 +35,24 @@ class ListItem extends Component {
 
   render() {
     const { titleStyle } = styles;
-    const { id, title } = this.props.library.item;
+    const {
+      id,
+      title
+    } = this.props.library.item;
 
     return (
-      <TouchableWithoutFeedback onPress={() => this.props.selectionLibrary(id)}>
+      <TouchableWithoutFeedback
+        onPress={() =>
+          this.props.selectionLibrary(
+            id
+          )
+        }
+      >
         <View>
           <CardSection>
-            <Text style={titleStyle}>{title}</Text>
+            <Text style={titleStyle}>
+              {title}
+            </Text>
           </CardSection>
           {this.renderDescription()}
         </View>
@@ -51,8 +68,13 @@ const styles = {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const expanded = state.selectedLibraryId === ownProps.library.item.id;
+const mapStateToProps = (
+  state,
+  ownProps
+) => {
+  const expanded =
+    state.selectedLibraryId ===
+    ownProps.library.item.id;
 
   return { expanded };
 };
