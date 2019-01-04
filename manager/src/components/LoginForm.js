@@ -99,11 +99,8 @@ class LoginForm extends Component {
             )}
             value={this.props.password}
           />
-        </CardSection>
-        {this.renderError()}
-        <CardSection>
-          {this.renderButton()}
-        </CardSection>
+        </CardSection>{this.renderError()}
+        <CardSection>{this.renderButton()}</CardSection>
       </Card>
     );
   }
