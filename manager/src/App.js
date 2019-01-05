@@ -8,9 +8,8 @@ import {
 } from 'redux';
 import reducers from './state/reducers';
 import initFirebase from './firebase/initFirebase';
-import LoginForm from './components/LoginForm';
-import { Header } from './components/common';
 import ReduxThunk from 'redux-thunk';
+import Router from './Router';
 
 class App extends Component {
   componentWillMount() {
@@ -26,8 +25,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <Header headerText="Employer Portal" />
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
