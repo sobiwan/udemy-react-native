@@ -9,10 +9,17 @@ import {
   Button
 } from './common';
 import { connect } from 'react-redux';
-import { employeeUpdate } from '../state/actions';
+import { employeeUpdate, employeeCreate } from '../state/actions';
 
 class EmployeeCreate extends Component {
+
+    onButtonPress() {
+        const { name, phone, shift } = this.props; 
+        this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+    }
+
   render() {
+
     return (
       <Card>
         <CardSection>
@@ -58,7 +65,7 @@ class EmployeeCreate extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>Add Employee</Button>
+          <Button onPress={this.onButtonPress.bind(this)}>Add Employee</Button>
         </CardSection>
       </Card>
     );
@@ -84,5 +91,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { employeeUpdate }
+  { employeeUpdate, employeeCreate }
 )(EmployeeCreate);

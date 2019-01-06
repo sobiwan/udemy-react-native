@@ -1,4 +1,4 @@
-import { EMPLOYEE_UPDATE } from '../actions/types';
+import { EMPLOYEE_UPDATE, EMPLOYEE_CREATE } from '../actions/types';
 
 const INIT_STATE = {
   name: '',
@@ -18,6 +18,8 @@ export default (
         [action.payload.prop]:
           action.payload.value
       };
+    case EMPLOYEE_CREATE:
+     return INIT_STATE;
     default:
       return state;
   }
